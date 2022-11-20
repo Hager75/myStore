@@ -1,4 +1,5 @@
 # MyStore
+Mystore is a simple e-commerce application that allows users to view a list of available products, add or remove them for the cart and write information like address and full name to complete the checkout process 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
 
