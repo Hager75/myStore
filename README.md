@@ -11,6 +11,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Run npm i
 - choose between `ng serve` or `ng build`
 
+## Project structure
+
+there is one module and route module in the application app-module and app-routing, there is one service to share data between main component,finally there are 3 folders in the project
+
+- components folder for main components like (cart, product-list, product-item, product-item-details, confirmation, user-form, page-not-found)
+- shared folder for shared components or models
+- layout folder for UI component like header
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
