@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row my-3">
+    <div class="col-10 mx-auto col-md-6">
+      <app-card-item
+        *ngFor="let item of cartItems"
+        [item]="item"
+        (handleAmountChange)="handleAmountChange()"
+        (handleDeleteItem)="handleDeleteItem($event)"
+      ></app-card-item>
+      <h5>Total price : {{ totalPrice | currency }}</h5>
+    </div>
+    <div class="col-10 mx-auto mx-md-end col-md-6">
+      <app-user-form [totalPrice]="totalPrice"></app-user-form>
+    </div>
+  </div>
+</div>

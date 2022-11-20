@@ -1,0 +1,28 @@
+<div class="row mb-3">
+  <div class="col-6 col-md-6 col-lg-3">
+    <img [src]="item.url" [alt]="item.name" class="img-fluid rounded" />
+  </div>
+  <div class="col-6 col-md-5 col-lg-4">
+    <div class="d-flex flex-column justify-content-center">
+      <h5 class="my-1">{{ item.name }}</h5>
+      <p class="my-1">{{ item.price | currency }}</p>
+      <div class="my-1 d-flex flex-column flex-sm-row align-items-sm-center">
+        <label [for]="item.id" class="h6 pr-2 py-1 my-0">Amount: </label>
+        <input
+          type="number"
+          class="form-control"
+          [id]="item.id"
+          [(ngModel)]="item.amount"
+          (keydown)="handleValidation($event)"
+          (ngModelChange)="amountChange(item)"
+          min="0"
+        />
+      </div>
+      <div class="my-1">
+        <button type="button" class="btn btn-danger" (click)="removeItem(item)">
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
