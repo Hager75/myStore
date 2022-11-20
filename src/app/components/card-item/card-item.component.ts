@@ -27,12 +27,14 @@ export class CardItemComponent implements OnInit {
     }
   }
   amountChange(item: Product): void {
-    if (item.amount == 0) {
-      this.removeItem(item);
-    }
     this.handleAmountChange.emit();
   }
   removeItem(item: Product): void {
-    this.handleDeleteItem.emit(item);
+    const userAnswer = confirm(
+      'Are you sure you want to delete this product ?'
+    );
+    if (userAnswer) {
+      this.handleDeleteItem.emit(item);
+    }
   }
 }
