@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from './../../product.service';
 
 @Component({
@@ -6,13 +6,10 @@ import { ProductService } from './../../product.service';
   templateUrl: './confirmation.component.html',
   styleUrls: ['./confirmation.component.css'],
 })
-export class ConfirmationComponent implements OnInit, OnDestroy {
+export class ConfirmationComponent implements OnInit {
   totalPrice: number = 0;
   constructor(private productService: ProductService) {}
   ngOnInit(): void {
     this.totalPrice = this.productService.totalPrice.getValue();
-  }
-  ngOnDestroy(): void {
-    localStorage.removeItem('cartItem');
   }
 }

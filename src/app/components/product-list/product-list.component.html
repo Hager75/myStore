@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row mt-4" *ngIf="!isLoadingData">
-    <div class="col-6 col-md-4 mb-4" *ngFor="let product of products; let i =index">
+    <div
+      class="col-6 col-md-4 mb-4"
+      *ngFor="let product of products; let i = index"
+    >
       <app-product-item
         [product]="product"
         (handleAddToCart)="addToCart($event)"
-        [amount]="productsAmount[i]"
       ></app-product-item>
     </div>
   </div>

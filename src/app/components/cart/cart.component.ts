@@ -13,9 +13,6 @@ export class CartComponent implements OnInit {
   constructor(private productService: ProductService) {}
   ngOnInit(): void {
     this.cartItems = this.productService.cartItems.getValue();
-    if (this.cartItems.length == 0 && localStorage.getItem('cartItem')) {
-      this.cartItems = JSON.parse(localStorage.getItem('cartItem')!);
-    }
     this.totalPrice = this.calculateTotalPrice();
   }
   calculateTotalPrice(): number {
@@ -35,10 +32,6 @@ export class CartComponent implements OnInit {
     allProducts = allProducts.filter((product) => item.id !== product.id);
     this.productService.cartItems.next(allProducts);
     this.cartItems = this.productService.cartItems.getValue();
-    localStorage.setItem(
-      'cartItem',
-      JSON.stringify(this.productService.cartItems.getValue())
-    );
     this.totalPrice = this.calculateTotalPrice();
   }
 }

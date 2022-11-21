@@ -69,10 +69,6 @@ export class ProductItemDetailsComponent implements OnInit, OnDestroy {
         this.product,
       ]);
     }
-    localStorage.setItem(
-      'cartItem',
-      JSON.stringify(this.productService.cartItems.getValue())
-    );
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
